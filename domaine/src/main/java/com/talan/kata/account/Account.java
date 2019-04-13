@@ -55,5 +55,6 @@ public class Account {
     }
 
 
-
+    public void deposit(BigDecimal amountToDeposit) {
+    }
 }
