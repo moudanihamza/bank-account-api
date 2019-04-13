@@ -30,4 +30,25 @@ public class AccountTest {
         Assertions.assertThat(sut.getAmount()).isEqualByComparingTo(actualAmount.add(amountToDeposit));
     }
 
+    // now we are going to think about the unhappy path what if
+    // the given amount is negative? oops what's going on we will withDraw amount inside of deposit
+
+    @Test(expected = NotValidAmountException.class)
+    public void depositAmount_userShouldNotBeAbleToDepositANegativeAmount() {
+        Account sut;
+        BigDecimal amountToDeposit = new BigDecimal("10.00");
+        BigDecimal actualAmount = new BigDecimal("20.00");
+        // a user should be able to deposit a valid amount
+        GIVEN:
+        // we had the right account with the specific amount
+        sut = new Account(new AccountID("1"), "BB12", "toto", LocalDateTime.now(Clock.systemUTC()), actualAmount);
+
+        WHEN:
+        // the user deposit the negative amount
+        sut.deposit(amountToDeposit.negate());
+
+        // then an exception will appear
+    }
+
+
 }
