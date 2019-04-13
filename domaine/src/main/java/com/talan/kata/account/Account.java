@@ -1,6 +1,8 @@
 package com.talan.kata.account;
 
 
+import com.talan.kata.account.exeptions.NotValidAmountException;
+
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -55,6 +57,7 @@ public class Account {
     }
 
 
-    public void deposit(BigDecimal amountToDeposit) {
+    public void deposit(BigDecimal amountToDeposit)  {
+        this.amount = this.amount.add(amountToDeposit);
     }
 }
