@@ -1,8 +1,8 @@
 package com.talan.kata.account;
 
 
-import com.talan.kata.account.exeptions.NotValidAmountException;
-
+import com.talan.kata.account.exceptions.NotSufficientFundsException;
+import com.talan.kata.account.exceptions.NotValidAmountException;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -57,13 +57,32 @@ public class Account {
     }
 
 
-    public void deposit(BigDecimal amountToDeposit) throws NotValidAmountException {
-        if (!isAmountPositive(amountToDeposit)) {
+   public   void deposit(BigDecimal amountToDeposit) throws NotValidAmountException {
+        if (isAmountPositive(amountToDeposit)) {
             throw new NotValidAmountException();
         }
         this.amount = this.amount.add(amountToDeposit);
     }
-    private boolean isAmountPositive(BigDecimal amount) {
-        return amount.compareTo(BigDecimal.ZERO) > 0;
+
+   public void withdrawAmount(final BigDecimal amountToWithDraw) throws NotValidAmountException, NotSufficientFundsException {
+        if (isAmountPositive(amountToWithDraw)) {
+            throw new NotValidAmountException();
+        }
+
+        if (hasSufficientFunds(amountToWithDraw)) {
+            this.amount = this.amount.subtract(amountToWithDraw);
+        } else {
+            throw new NotSufficientFundsException();
+        }
     }
+
+
+    private boolean isAmountPositive(BigDecimal amount) {
+        return amount.compareTo(BigDecimal.ZERO) <= 0;
+    }
+
+    private boolean hasSufficientFunds(final BigDecimal amount) {
+        return this.getAmount().compareTo(amount) >= 0;
+    }
+
 }

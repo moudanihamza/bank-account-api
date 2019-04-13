@@ -1,4 +1,4 @@
-create table com.talan.kata.account(
+create table ACCOUNT(
  id varchar2(36) not null,
  account_number varchar2(26) not null ,
  name varchar2(26) not null,
@@ -14,6 +14,6 @@ create table TRANSACTION_HISTORY(
   amount decimal(12,2) not null,
   status varchar2(26),
   primary key(id),
-  constraint fk_trs_histo_acct_payer foreign key(payer_id) references com.talan.kata.account(id),
-  constraint fk_trs_histo_acct_payee foreign key(payee_id) references com.talan.kata.account(id)
+  constraint fk_trs_histo_acct_payer foreign key(payer_id) references account(id),
+  constraint fk_trs_histo_acct_payee foreign key(payee_id) references account(id)
 );

@@ -1,4 +1,3 @@
-@todo
 Feature: A user should be able to manager his account and transactions histories
          when mean with user everyone use our api system or person
 
