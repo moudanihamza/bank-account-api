@@ -57,7 +57,13 @@ public class Account {
     }
 
 
-    public void deposit(BigDecimal amountToDeposit)  {
+    public void deposit(BigDecimal amountToDeposit) throws NotValidAmountException {
+        if (!isAmountPositive(amountToDeposit)) {
+            throw new NotValidAmountException();
+        }
         this.amount = this.amount.add(amountToDeposit);
+    }
+    private boolean isAmountPositive(BigDecimal amount) {
+        return amount.compareTo(BigDecimal.ZERO) > 0;
     }
 }

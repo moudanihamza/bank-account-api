@@ -1,6 +1,7 @@
 package com.talan.kata.account;
 
 
+import com.talan.kata.account.exeptions.NotValidAmountException;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
@@ -13,7 +14,7 @@ import static org.junit.Assert.*;
 public class AccountTest {
 
     @Test
-    public void depositAmount() {
+    public void depositAmount() throws NotValidAmountException {
         Account sut;
         BigDecimal amountToDeposit = new BigDecimal("10.00");
         BigDecimal actualAmount = new BigDecimal("20.00");
@@ -34,7 +35,7 @@ public class AccountTest {
     // the given amount is negative? oops what's going on we will withDraw amount inside of deposit
 
     @Test(expected = NotValidAmountException.class)
-    public void depositAmount_userShouldNotBeAbleToDepositANegativeAmount() {
+    public void depositAmount_userShouldNotBeAbleToDepositANegativeAmount() throws NotValidAmountException {
         Account sut;
         BigDecimal amountToDeposit = new BigDecimal("10.00");
         BigDecimal actualAmount = new BigDecimal("20.00");
