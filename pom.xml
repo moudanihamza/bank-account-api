@@ -27,6 +27,7 @@
         <h2.version>1.4.196</h2.version>
         <cucumber.version>1.2.4</cucumber.version>
         <spring-boot-version>2.1.4.RELEASE</spring-boot-version>
+        <swagger.version>2.9.2</swagger.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -112,6 +113,16 @@
                 <artifactId>cucumber-java</artifactId>
                 <version>${cucumber.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
             </dependency>
 
         </dependencies>
