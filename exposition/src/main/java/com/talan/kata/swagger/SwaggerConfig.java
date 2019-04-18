@@ -40,7 +40,7 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfo(
                 "Bank Account Kata",
-                "This API allowed to you to manage a specific account and transaction histories .",
+                "This API allowed  you to manage a specific account and transaction histories .",
                 "SNAPSHOT VERSION 1",
                 "Terms of service",
                 new Contact("Hamza MOUDANI", "www.hamzamoudani.com", "moudanihamza@company.com"),

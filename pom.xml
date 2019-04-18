@@ -28,6 +28,7 @@
         <cucumber.version>1.2.4</cucumber.version>
         <spring-boot-version>2.1.4.RELEASE</spring-boot-version>
         <swagger.version>2.9.2</swagger.version>
+        <jacoco.version>0.8.2</jacoco.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -140,6 +141,29 @@
     </dependencies>
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <!-- attached to Maven test phase -->
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>target/jacoco-report</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
