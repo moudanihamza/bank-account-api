@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>bankaccount</artifactId>
-        <groupId>com.talan.kata</groupId>
+        <groupId>com.kata</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -12,11 +12,11 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.talan.kata</groupId>
+            <groupId>com.kata</groupId>
             <artifactId>domaine</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.talan.kata</groupId>
+            <groupId>com.kata</groupId>
             <artifactId>infrastructure</artifactId>
             <scope>test</scope>
         </dependency>

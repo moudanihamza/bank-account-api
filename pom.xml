@@ -15,7 +15,7 @@
         <version>2.1.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.talan.kata</groupId>
+    <groupId>com.kata</groupId>
     <artifactId>bankaccount</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>bankaccount</name>
@@ -158,9 +158,6 @@
                         <goals>
                             <goal>report</goal>
                         </goals>
-                        <configuration>
-                            <outputDirectory>target/jacoco-report</outputDirectory>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
