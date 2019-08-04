@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/moudanihamza/bank-account-api.svg?branch=master)](https://travis-ci.org/moudanihamza/bank-account-api)
+[![codecov](https://codecov.io/gh/moudanihamza/bank-account-api/branch/master/graphs/badge.svg)](https://codecov.io/gh/moudanihamza/bank-account-api)
+
 # Bank Account
    Develop an api that manages a bank account 
    Rules:
